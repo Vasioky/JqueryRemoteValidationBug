@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.3.js"></script>
+    <script src="Scripts/jquery.validate.js"></script>
+</head>
+<body>
+    <form action="Home/save" method="post">
+        <input type="text" name="Name" value="test" />
+        <input type="submit" value="PostValue" name="PostAction" />
+    </form>
+    <script>
+        $(function () {
+            $('form').validate({
+                rules: {
+                    Name: {
+                        required: true,
+                        remote: "Home/remote"
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
